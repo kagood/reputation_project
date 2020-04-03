@@ -1,0 +1,31 @@
+---
+title: "reputation_analyses"
+author: "Kayla Good"
+date: "4/2/2020"
+output:
+  pdf_document: default
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include = FALSE, messages = FALSE}
+library(knitr)
+library(broom)
+library(plotrix)
+library(aod)
+library(prevalence)
+library(extrafont)
+library(grid)
+library(ggeffects)
+library(tidyverse)
+```
+
+```{r}
+# set ggplot theme
+theme_set(theme_classic())
+```
+
