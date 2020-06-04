@@ -1,6 +1,6 @@
 ---
 title: "reputation_analyses"
-author: "Kayla Good"
+author: ""
 date: "4/2/2020"
 urlcolor: blue # to show hyperlinks in blue when printed as pdf
 
