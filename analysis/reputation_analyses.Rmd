@@ -39,7 +39,10 @@ library("extrafont")
 library("grid")
 library("kableExtra")
 library("ggeffects") # for generating model predictions
+library("MASS")
+library("lmtest")
 library("tidyverse") # tidyverse
+library("dplyr")
 ```
 
 ```{r, include=F}
@@ -98,12 +101,10 @@ lap_summary %>%
                 latex_options = "hold_position")
 ```
 
-
 ## Demographics
 
 ```{r}
 # gender
-
 # create dataframe with percentage breakdown for gender of participants
 lap_gender_summary = lap_data %>% 
   group_by(AgeGroup, Sex) %>% 
@@ -120,7 +121,6 @@ lap_gender_summary %>%
 
 ```{r}
 # age
-
 # create dataframe with summary stats (mean and SD) for age of participants
 lap_age_summary <- lap_data %>% 
   group_by(AgeGroup) %>% 
@@ -133,6 +133,80 @@ lap_age_summary %>%
   kable_styling(bootstrap_options = "striped",
                 full_width = F,
                 latex_options = "hold_position")
+```
+
+## Examining Effects of Gender, Order, etc.
+
+```{r}
+# generates logistic regression model examining the effect of gender on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would lie about their poor performance
+lap_logit_gender_model = glm(WhoLied ~ Sex, 
+                       data = lap_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of gender
+lap_gender_wald_test = wald.test(b = coef(lap_logit_gender_model),
+                           Sigma = vcov(lap_logit_gender_model), 
+                           Terms = 2, 
+                           verbose = TRUE) 
+
+print(lap_gender_wald_test, digits = 5) # prints results of Wald chi-square test
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and gender
+lap_logit_gender_int_model = glm(WhoLied ~ Sex*Age_Ex, 
+                       data = lap_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and gender
+lap_gender_int_wald_test = wald.test(b = coef(lap_logit_gender_int_model),
+                           Sigma = vcov(lap_logit_gender_int_model), 
+                           Terms = 4, 
+                           verbose = TRUE)
+
+print(lap_gender_int_wald_test, digits = 5)
+```
+
+```{r}
+# generates logistic regression model examining the effect of order in which
+# characters were presented on whether children identified the character with 
+# reputational or intrinsic concerns as the one who would lie about their poor performance
+lap_logit_order_model = glm(WhoLied ~ Script, 
+                       data = lap_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of character order
+lap_order_wald_test = wald.test(b = coef(lap_logit_order_model),
+                           Sigma = vcov(lap_logit_order_model), 
+                           Terms = 2, 
+                           verbose = TRUE) 
+
+print(lap_order_wald_test, digits = 5) # prints results of Wald chi-square test
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and character order
+lap_logit_order_int_model = glm(WhoLied ~ Script*Age_Ex, 
+                       data = lap_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and character order
+lap_order_int_wald_test = wald.test(b = coef(lap_logit_order_int_model),
+                           Sigma = vcov(lap_logit_order_int_model), 
+                           Terms = 4, 
+                           verbose = TRUE)
+
+print(lap_order_int_wald_test, digits = 5) # prints results of Wald chi-square test
 ```
 
 ## Confirmatory Analyses
@@ -229,7 +303,6 @@ las_summary %>%
 
 ```{r}
 # gender
-
 # creates dataframe with percentage breakdown for gender of participants
 las_gender_summary = las_data %>% 
   group_by(AgeGroup, Sex) %>% 
@@ -246,7 +319,6 @@ las_gender_summary %>%
 
 ```{r, fig.pos='H'}
 # age
-
 # creates dataframe with summary stats (mean and SD) for age of participants
 las_age_summary = las_data %>% 
   group_by(AgeGroup) %>% 
@@ -259,6 +331,80 @@ las_age_summary %>%
   kable_styling(bootstrap_options = "striped",
                 full_width = F,
                 latex_options = "hold_position")
+```
+
+## Examining Effects of Gender, Order, etc.
+
+```{r}
+# generates logistic regression model examining the effect of gender
+# on whether children identified the character with reputational or intrinsic 
+# concerns as the one who would lie about their poor performance
+las_gender_logit_model = glm(WhoLied ~ Sex, 
+                       data = las_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of gender
+las_gender_wald_test = wald.test(b = coef(las_gender_logit_model),
+                           Sigma = vcov(las_gender_logit_model), 
+                           Terms = 2, 
+                           verbose = TRUE) 
+
+print(las_gender_wald_test, digits = 4) # prints results of Wald chi-square test
+```
+
+```{r}
+# generates logistic regression model for interaction between age and gender
+las_gender_int_logit_model = glm(WhoLied ~ Sex*Age_Ex, 
+                       data = las_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and gender
+las_gender_int_wald_test = wald.test(b = coef(las_gender_int_logit_model),
+                           Sigma = vcov(las_gender_int_logit_model), 
+                           Terms = 4, 
+                           verbose = TRUE) 
+
+print(las_gender_int_wald_test, digits = 4) # prints results of Wald chi-square test
+```
+
+```{r}
+# generates logistic regression model examining the effect of character order
+# on whether children identified the character with reputational or intrinsic 
+# concerns as the one who would lie about their poor performance
+las_order_logit_model = glm(WhoLied ~ Script, 
+                       data = las_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of character order
+las_order_wald_test = wald.test(b = coef(las_order_logit_model),
+                           Sigma = vcov(las_order_logit_model), 
+                           Terms = 2, 
+                           verbose = TRUE) 
+
+print(las_order_wald_test, digits = 4) # prints results of Wald chi-square test
+```
+
+```{r}
+# generates logistic regression model for interaction between age and character order
+las_order_int_logit_model = glm(WhoLied ~ Script*Age_Ex, 
+                       data = las_data, 
+                       family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and character order
+las_order_int_wald_test = wald.test(b = coef(las_order_int_logit_model),
+                           Sigma = vcov(las_order_int_logit_model), 
+                           Terms = 4, 
+                           verbose = TRUE)
+
+print(las_order_int_wald_test, digits = 4) # prints results of Wald chi-square test
 ```
 
 ## Confirmatory Analyses
@@ -359,7 +505,6 @@ psh_summary %>%
 
 ```{r}
 # gender
-
 # creates dataframe with percentage breakdown for gender of participants
 psh_gender_summary = psh_data %>% 
   group_by(AgeGroup, Sex) %>% 
@@ -376,7 +521,6 @@ psh_gender_summary %>%
 
 ```{r}
 # age
-
 # creates dataframe with summary stats (mean and SD) for age of participants
 psh_age_summary = psh_data %>% 
   group_by(AgeGroup) %>% 
@@ -389,6 +533,80 @@ psh_age_summary %>%
   kable_styling(bootstrap_options = "striped",
                 full_width = F,
                 latex_options = "hold_position")
+```
+
+## Examining Effects of Gender, Order, etc.
+
+```{r}
+# generates logistic regression model examining the effect of gender on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would publicly seek help
+psh_logit_gender_model = glm(WhoAsked ~ Sex, 
+                              data = psh_data, 
+                              family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of gender
+psh_gender_wald_test = wald.test(b = coef(psh_logit_gender_model), 
+                                  Sigma = vcov(psh_logit_gender_model), 
+                                  Terms = 2, 
+                                  verbose = TRUE)
+
+print(psh_gender_wald_test, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and gender
+psh_logit_gender_int_model = glm(WhoAsked ~ Sex*Age_Ex, 
+                              data = psh_data, 
+                              family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and gender
+psh_gender_int_wald_test = wald.test(b = coef(psh_logit_gender_int_model), 
+                                  Sigma = vcov(psh_logit_gender_int_model), 
+                                  Terms = 4, 
+                                  verbose = TRUE)
+
+print(psh_gender_int_wald_test, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining the effect of character order on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would publicly seek help
+psh_logit_order_model = glm(WhoAsked ~ Script, 
+                              data = psh_data, 
+                              family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of character order
+psh_order_wald_test = wald.test(b = coef(psh_logit_order_model), 
+                                  Sigma = vcov(psh_logit_order_model), 
+                                  Terms = 2, 
+                                  verbose = TRUE)
+
+print(psh_order_wald_test, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and character order
+psh_logit_order_int_model = glm(WhoAsked ~ Script*Age_Ex, 
+                              data = psh_data, 
+                              family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and character order
+psh_order_int_wald_test = wald.test(b = coef(psh_logit_order_int_model), 
+                                  Sigma = vcov(psh_logit_order_int_model), 
+                                  Terms = 4, 
+                                  verbose = TRUE)
+
+print(psh_order_int_wald_test, digits = 4)
 ```
 
 ## Confirmatory Analyses
@@ -501,7 +719,6 @@ pvp_summary %>%
 
 ```{r}
 # gender
-
 # creates dataframe with percentage breakdown for gender of participants
 pvp_gender_summary = pvp_data %>% 
   group_by(Condition, AgeGroup, Sex) %>% 
@@ -518,7 +735,6 @@ pvp_gender_summary %>%
 
 ```{r}
 # age
-
 # creates dataframe with summary stats (mean and SD) for age of participants
 pvp_age_summary <- pvp_data %>% 
   group_by(Condition, AgeGroup) %>% 
@@ -533,9 +749,7 @@ pvp_age_summary %>%
                 latex_options = "hold_position")
 ```
 
-## Confirmatory Analyses
-
-### Examining interaction between condition and age
+## Examining Effects of Gender, Order, etc.
 
 ```{r}
 # recoding data such that 'intrinsic' is 0 and 'reputational' is 1 &
@@ -551,10 +765,267 @@ recoded_pvp_data = pvp_data %>%
          SoughtHelp = factor(SoughtHelp, levels = c(0,1))) 
 ```
 
+### Both Conditions
+
+```{r}
+# generates logistic regression model examining interaction between gender and 
+# condition on whether children identified the character with reputational or 
+# intrinsic concerns as the one who would seek help
+pvp_gender_condition_int_logit_model = glm(formula = SoughtHelp ~ factor(Condition) * Sex, 
+                              data = recoded_pvp_data, 
+                              family = "binomial")
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between gender and condition
+pvp_wald_test_condition_gender_effect <- wald.test(b = coef(pvp_gender_condition_int_logit_model),
+                                                     Sigma = vcov(pvp_gender_condition_int_logit_model), 
+                                                     Terms = 4, 
+                                                     verbose = TRUE)
+
+print(pvp_wald_test_condition_gender_effect, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining interaction between gender, age,
+# and condition
+pvp_gender_condition_age_int_model <- glm(formula = SoughtHelp ~ Age_Ex * factor(Condition) * Sex, 
+                              data = recoded_pvp_data, 
+                              family = "binomial")
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between gender, age,
+# and condition
+pvp_wald_test_gender_condition_age_int = wald.test(b = coef(pvp_gender_condition_age_int_model),
+                                                     Sigma = vcov(pvp_gender_condition_age_int_model), 
+                                                     Terms = 8, 
+                                                     verbose = TRUE)
+print(pvp_wald_test_gender_condition_age_int, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining interaction between character order and 
+# condition on whether children identified the character with reputational or 
+# intrinsic concerns as the one who would seek help
+pvp_order_condition_int_logit_model = glm(formula = SoughtHelp ~ factor(Condition) * Script, 
+                              data = recoded_pvp_data, 
+                              family = "binomial")
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between character order and condition
+pvp_wald_test_condition_order_effect = wald.test(b = coef(pvp_order_condition_int_logit_model),
+                                                     Sigma = vcov(pvp_order_condition_int_logit_model), 
+                                                     Terms = 4, 
+                                                     verbose = TRUE)
+
+print(pvp_wald_test_condition_order_effect, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining interaction between character order, age,
+# and condition
+pvp_order_condition_age_logit_model = glm(formula = SoughtHelp ~ Age_Ex * factor(Condition) * Script, 
+                              data = recoded_pvp_data, 
+                              family = "binomial") 
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between character order, age,
+# and condition
+pvp_wald_test_interaction_effect_order <- wald.test(b = coef(pvp_order_condition_age_logit_model),
+                                                     Sigma = vcov(pvp_order_condition_age_logit_model), 
+                                                     Terms = 8, 
+                                                     verbose = TRUE)
+
+print(pvp_wald_test_interaction_effect_order, digits = 4)
+```
+
+### Private Condition
+
+```{r}
+# generates logistic regression model examining effect of gender on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would seek help privately
+pvp_private_gender_logit_model = glm(SoughtHelp ~ Sex, 
+                                  data = study4_private_data, 
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of gender
+pvp_private_gender_wald_test = wald.test(b = coef(pvp_private_gender_logit_model),
+                                      Sigma = vcov(pvp_private_gender_logit_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE) 
+
+print(pvp_private_gender_wald_test, digits = 4)
+```
+
+```{r}
+# breakdown of private help-seeking by gender
+private_summary_liking_gender = study4_private_data %>%
+  group_by(Sex) %>%
+  summarise(percent_intrinsic = (sum(SoughtHelp == "Intrinsic")/length(Sub_ID))*100,
+            number_intrinsic = (sum(SoughtHelp == "Intrinsic")),
+            percent_reputational = (sum(SoughtHelp == "Reputational")/length(Sub_ID))*100,
+            number_reputational = (sum(SoughtHelp == "Reputational")),
+            total_n = (sum(SoughtHelp == "Intrinsic"|SoughtHelp == "Reputational"))) 
+
+private_summary_liking_gender %>% 
+  kable(caption = "Who sought help privately? (By Gender)") # generates table
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and gender
+pvp_private_gender_int_logit_model = glm(SoughtHelp ~ Sex*Age_Ex, 
+                                  data = study4_private_data, 
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and gender
+pvp_private_gender_int_wald_test = wald.test(b = coef(pvp_private_gender_int_logit_model),
+                                      Sigma = vcov(pvp_private_gender_int_logit_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE) 
+
+print(pvp_private_gender_int_wald_test, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining effect of character order on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would seek help privately
+pvp_private_order_logit_model = glm(SoughtHelp ~ Script,
+                                  data = study4_private_data,
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of character order
+pvp_private_order_wald_test = wald.test(b = coef(pvp_private_order_logit_model),
+                                      Sigma = vcov(pvp_private_order_logit_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(pvp_private_order_wald_test, digits = 4)
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and character order
+pvp_private_order_int_logit_model = glm(SoughtHelp ~ Script*Age_Ex,
+                                  data = study4_private_data,
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and character order
+pvp_private_order_int_wald_test = wald.test(b = coef(pvp_private_order_int_logit_model),
+                                      Sigma = vcov(pvp_private_order_int_logit_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE) 
+
+print(pvp_private_order_int_wald_test, digits = 4)
+```
+
+### Public Condition
+
+```{r}
+# generates logistic regression model examining effect of gender on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would seek help publicly
+pvp_public_gender_logit_model = glm(SoughtHelp ~ Sex, 
+                                 data = study4_public_data, 
+                                 family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of gender
+pvp_public_gender_wald_test = wald.test(b=coef(pvp_public_gender_logit_model),
+                                     Sigma = vcov(pvp_public_gender_logit_model), 
+                                     Terms = 2, 
+                                     verbose = TRUE)
+
+print(pvp_public_gender_wald_test, digits = 4)
+```
+
+```{r}
+# breakdown of public help-seeking by gender
+public_summary_liking_gender = study4_public_data %>%
+  group_by(Sex) %>%
+  summarise(percent_intrinsic = (sum(SoughtHelp == "Intrinsic")/length(Sub_ID))*100,
+            number_intrinsic = (sum(SoughtHelp == "Intrinsic")),
+            percent_reputational = (sum(SoughtHelp == "Reputational")/length(Sub_ID))*100,
+            number_reputational = (sum(SoughtHelp == "Reputational")),
+            total_n = (sum(SoughtHelp == "Intrinsic"|SoughtHelp == "Reputational"))) 
+
+public_summary_liking_gender %>% 
+  kable(caption = "Who sought help publicly? (By Gender)") # generates table
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and gender
+pvp_public_gender_int_logit_model = glm(SoughtHelp ~ Sex*Age_Ex, 
+                                 data = study4_public_data, 
+                                 family = binomial(link = "logit")) 
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and gender
+pvp_public_gender_int_wald_test = wald.test(b=coef(pvp_public_gender_int_logit_model),
+                                     Sigma = vcov(pvp_public_gender_int_logit_model), 
+                                     Terms = 4, 
+                                     verbose = TRUE)
+
+print(pvp_public_gender_int_wald_test, digits = 4) 
+```
+
+```{r}
+# generates logistic regression model examining effect of character order on whether 
+# children identified the character with reputational or intrinsic concerns 
+# as the one who would seek help publicly
+pvp_public_order_logit_model = glm(SoughtHelp ~ Script,
+                                  data = study4_public_data,
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for main effect of character order
+pvp_public_order_wald_test = wald.test(b=coef(pvp_public_order_logit_model),
+                                     Sigma = vcov(pvp_public_order_logit_model), 
+                                     Terms = 2, 
+                                     verbose = TRUE)
+
+print(pvp_public_order_wald_test, digits = 4) 
+```
+
+```{r}
+# generates logistic regression model examining interaction between age and character order
+pvp_public_order_int_logit_model = glm(SoughtHelp ~ Script*Age_Ex,
+                                  data = study4_public_data,
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for interaction between age and character order
+pvp_public_order_int_wald_test = wald.test(b=coef(pvp_public_order_int_logit_model),
+                                     Sigma = vcov(pvp_public_order_int_logit_model), 
+                                     Terms = 4, 
+                                     verbose = TRUE)
+
+print(pvp_public_order_int_wald_test, digits = 4) 
+```
+
+## Confirmatory Analyses
+
+### Examining interaction between condition and age
+
 ```{r}
 # generates logistic regression model examining the effect of age (entered as a continuous 
 # predictor) and the effect of condition (entered as a categorical predictor) on whether 
-# children identified the character with reputational or intrinsic concerns as 
+# children identified the character with reputational or intrinsic concerns as
 # the one who would seek help
 pvp_logit_model = glm(formula = SoughtHelp ~ Age_Ex * factor(Condition), 
                               data = recoded_pvp_data, 
@@ -690,6 +1161,744 @@ study4_public_binomial_test_summary = study4_public_binomial_tests$test %>%
 # generates table of binomial test estimates
 study4_public_binomial_test_summary %>% 
   kable(caption = "Binomial Tests") %>% 
+  kable_styling(bootstrap_options = "striped",
+                full_width = F,
+                latex_options = c("hold_position", "scale_down"))
+```
+# Study 5 - Examining Children's Inferences in a Non-School Context
+
+```{r}
+study5_data = read_csv("../data/study5_non_school_context/data_study5.csv") %>% 
+  mutate(age_group = ifelse((child_age_yrs == 4|child_age_yrs == 5), "4-5", 
+                            ifelse((child_age_yrs == 6|child_age_yrs == 7), "6-7",
+                                   ifelse((child_age_yrs == 8|child_age_yrs == 9), "8-9", NA)))) %>% 
+  mutate(age_group = as.factor(age_group)) %>% 
+  mutate(composite_score = as.factor(composite_score)) %>% 
+  mutate(like_better = factor(like_better,
+                              levels = c("Reputational",
+                                         "Intrinsic"),
+                              labels = c("Reputational",
+                                         "Intrinsic"))) %>% 
+  mutate(lap = factor(lap,
+                      levels = c("Intrinsic",
+                                 "Reputational"),
+                      labels = c("Intrinsic",
+                                 "Reputational"))) %>% 
+  mutate(lah = factor(lah,
+                      levels = c("Intrinsic",
+                                 "Reputational"),
+                      labels = c("Intrinsic",
+                                 "Reputational"))) %>% 
+  mutate(across(.cols = starts_with("comp_check"),
+                ~factor(.,
+                        levels = c("Incorrect",
+                                   "Correct"),
+                        labels = c("Incorrect",
+                                   "Correct")))) %>% 
+  mutate(child_gender = factor(child_gender,
+                               levels = c("Male",
+                                          "Female"),
+                               labels = c("Male",
+                                          "Female")))
+```
+
+## Summary
+
+```{r}
+# response breakdown (Q1 - liking measure)
+study5_summary_liking = study5_data %>%
+  group_by(age_group) %>%
+  summarise(percent_intrinsic = (sum(like_better == "Intrinsic")/length(new_ID))*100,
+            number_intrinsic = (sum(like_better == "Intrinsic")),
+            percent_reputational = (sum(like_better == "Reputational")/length(new_ID))*100,
+            number_reputational = (sum(like_better == "Reputational")),
+            total_n = (sum(like_better == "Intrinsic"|like_better == "Reputational"))) 
+
+study5_summary_liking %>% 
+  kable(caption = "Who do you like better?") # generates table
+```
+
+```{r}
+# response breakdown (Q2 - lying about performance measure)
+study5_summary_lap = study5_data %>%
+  group_by(age_group) %>%
+  summarise(percent_intrinsic = (sum(lap == "Intrinsic")/length(new_ID))*100,
+            number_intrinsic = (sum(lap == "Intrinsic")),
+            percent_reputational = (sum(lap == "Reputational")/length(new_ID))*100,
+            number_reputational = (sum(lap == "Reputational")),
+            total_n = (sum(lap == "Intrinsic"|lap == "Reputational"))) 
+
+study5_summary_lap %>% 
+  kable(caption = "Who do you think lied about doing poorly at the game?") # generates table
+```
+
+```{r}
+# response breakdown (Q3 - lying about helping measure)
+study5_summary_lah = study5_data %>%
+  group_by(age_group) %>%
+  summarise(percent_intrinsic = (sum(lah == "Intrinsic")/length(new_ID))*100,
+            number_intrinsic = (sum(lah == "Intrinsic")),
+            percent_reputational = (sum(lah == "Reputational")/length(new_ID))*100,
+            number_reputational = (sum(lah == "Reputational")),
+            total_n = (sum(lah == "Intrinsic"|lah == "Reputational"))) 
+
+study5_summary_lah %>% 
+  kable(caption = "Who do you think lied about helping?") # generates table
+```
+
+## Demographics
+
+```{r}
+# gender breakdown (by age group)
+study5_gender_summary = study5_data %>% 
+  group_by(age_group,
+           child_gender) %>% 
+  summarise(n = length(new_ID)) %>% 
+  mutate(percentage = (n / sum(n))*100) 
+
+study5_gender_summary %>% 
+  kable(caption = "Gender Summary") # generates table
+```
+
+```{r}
+# age breakdown 
+study5_age_summary = study5_data %>%
+  group_by(age_group) %>%
+  summarise(mean_age = mean(exact_age),
+            SD_age = sd(exact_age))
+
+study5_age_summary %>%
+  kable(caption = "Mean Age (by Age Group)")
+```
+
+## Examining Effects of Gender, Order, etc.
+
+### Composite Measure
+
+```{r}
+# check for main effect of gender (composite measure)
+composite_gender_model_aug = polr(composite_score ~ child_gender,
+                           data = study5_data,
+                           Hess = TRUE)
+
+composite_gender_model_compact = polr(composite_score ~ 1,
+                           data = study5_data)
+```
+
+```{r}
+# calculate wald chi-square value
+composite_gender_wald_test = waldtest(composite_gender_model_compact,
+                                    composite_gender_model_aug)
+
+print(composite_gender_wald_test)
+```
+
+```{r}
+# check for interaction between gender and age
+composite_gender_int_model_aug = polr(composite_score ~ child_gender*exact_age,
+                           data = study5_data,
+                           Hess = TRUE)
+
+composite_gender_int_model_compact = polr(composite_score ~ child_gender + exact_age,
+                           data = study5_data)
+```
+
+```{r}
+# calculate wald chi-square value
+composite_gender_int_wald_test = waldtest(composite_gender_int_model_compact,
+                                    composite_gender_int_model_aug)
+
+print(composite_gender_int_wald_test)
+```
+
+```{r}
+# check for main effect of character order (composite measure)
+composite_char_order_model_aug = polr(composite_score ~ Condition,
+                           data = study5_data,
+                           Hess = TRUE)
+
+composite_char_order_model_compact = polr(composite_score ~ 1,
+                           data = study5_data)
+```
+
+```{r}
+# calculate wald chi-square value
+composite_char_order_wald_test = waldtest(composite_char_order_model_compact,
+                                    composite_char_order_model_aug)
+
+print(composite_char_order_wald_test)
+```
+
+```{r}
+# check for interaction between age and character order (composite measure)
+composite_char_order_model_int_aug = polr(composite_score ~ Condition * exact_age,
+                           data = study5_data,
+                           Hess = TRUE)
+
+composite_char_order_model_int_compact = polr(composite_score ~ Condition + exact_age,
+                           data = study5_data)
+```
+
+```{r}
+# calculate wald chi-square value
+composite_char_order_int_wald_test = waldtest(composite_char_order_model_int_compact,
+                                    composite_char_order_model_int_aug)
+
+print(composite_char_order_int_wald_test)
+```
+
+```{r}
+# create df with binary study order column
+df.study_order_binary = study5_data %>% 
+  mutate(study_order_first = ifelse(study_order == 1,
+                                    1,
+                                    2))
+```
+
+```{r}
+# check for main effect of study order (composite measure)
+composite_order_model_aug = polr(composite_score ~ study_order_first,
+                           data = df.study_order_binary)
+
+composite_order_model_compact = polr(composite_score ~ 1,
+                           data = df.study_order_binary)
+```
+
+```{r}
+# calculate wald chi-square value
+composite_order_wald_test = waldtest(composite_order_model_compact,
+                                    composite_order_model_aug)
+
+print(composite_order_wald_test)
+```
+
+```{r}
+# check for interaction between age and study order (composite measure)
+composite_order_model_int_aug = polr(composite_score ~ study_order_first * exact_age,
+                           data = df.study_order_binary)
+
+composite_order_model_int_compact = polr(composite_score ~ study_order_first + exact_age,
+                           data = df.study_order_binary)
+```
+
+```{r}
+# calculate wald chi-square value
+composite_order_int_wald_test = waldtest(composite_order_model_int_compact,
+                                    composite_order_model_int_aug)
+
+print(composite_order_int_wald_test)
+```
+
+### Liking Measure
+
+```{r}
+# check for main effect of gender (liking measure)
+liking_logit_gender_model = glm(like_better ~ child_gender, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for main effect of gender
+liking_gender_wald_test = wald.test(b = coef(liking_logit_gender_model),
+                                      Sigma = vcov(liking_logit_gender_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(liking_gender_wald_test, digits = 4)
+```
+
+```{r}
+# response breakdown (Q1 - liking measure by gender)
+study5_summary_liking_gender = study5_data %>%
+  group_by(child_gender) %>%
+  summarise(percent_intrinsic = (sum(like_better == "Intrinsic")/length(new_ID))*100,
+            number_intrinsic = (sum(like_better == "Intrinsic")),
+            percent_reputational = (sum(like_better == "Reputational")/length(new_ID))*100,
+            number_reputational = (sum(like_better == "Reputational")),
+            total_n = (sum(like_better == "Intrinsic"|like_better == "Reputational"))) 
+
+study5_summary_liking_gender %>% 
+  kable(caption = "Who do you like better? (By Gender)") # generates table
+```
+
+```{r}
+# check for interaction between age and gender (liking measure)
+liking_logit_gender_age_int_model = glm(like_better ~ child_gender*exact_age, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for interaction between age and gender
+liking_gender_int_wald_test = wald.test(b = coef(liking_logit_gender_age_int_model),
+                                      Sigma = vcov(liking_logit_gender_age_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(liking_gender_int_wald_test, digits = 4)
+```
+
+```{r}
+# check for main effect of character order (Q1 - liking measure)
+liking_logit_char_order_model = glm(like_better ~ Condition, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic
+liking_char_order_wald_test = wald.test(b = coef(liking_logit_char_order_model),
+                                      Sigma = vcov(liking_logit_char_order_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE) 
+
+print(liking_char_order_wald_test, digits = 4) 
+```
+
+```{r}
+# response breakdown (Q1 - liking measure by character order)
+study5_summary_liking_char_order = study5_data %>%
+  group_by(Condition) %>%
+  summarise(percent_intrinsic = (sum(like_better == "Intrinsic")/length(new_ID))*100,
+            number_intrinsic = (sum(like_better == "Intrinsic")),
+            percent_reputational = (sum(like_better == "Reputational")/length(new_ID))*100,
+            number_reputational = (sum(like_better == "Reputational")),
+            total_n = (sum(like_better == "Intrinsic"|like_better == "Reputational"))) 
+
+study5_summary_liking_char_order %>% 
+  kable(caption = "Who do you like better? (By Character Order)") # generates table
+```
+
+```{r}
+# check for interaction between age and character order (Q1 - liking measure)
+liking_logit_char_order_int_model = glm(like_better ~ Condition*exact_age, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic
+liking_char_order_int_wald_test = wald.test(b = coef(liking_logit_char_order_int_model),
+                                      Sigma = vcov(liking_logit_char_order_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(liking_char_order_int_wald_test, digits = 4)
+```
+
+```{r}
+# check for main effect of study order (Q1 - liking measure)
+liking_logit_order_binary_model = glm(like_better ~ study_order_first, 
+                       data = df.study_order_binary, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic
+liking_order_wald_test = wald.test(b = coef(liking_logit_order_binary_model),
+                                      Sigma = vcov(liking_logit_order_binary_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(liking_order_wald_test, digits = 4) 
+```
+
+```{r}
+# breakdown of liking by study order
+study5_summary_liking_study_order = study5_data %>%
+  mutate(order_first_or_not = ifelse(study_order == "1",
+                                     "Yes",
+                                     "No")) %>% 
+  group_by(order_first_or_not) %>%
+  summarise(percent_intrinsic = (sum(like_better == "Intrinsic")/length(new_ID))*100,
+            number_intrinsic = (sum(like_better == "Intrinsic")),
+            percent_reputational = (sum(like_better == "Reputational")/length(new_ID))*100,
+            number_reputational = (sum(like_better == "Reputational")),
+            total_n = (sum(like_better == "Intrinsic"|like_better == "Reputational"))) 
+
+study5_summary_liking_study_order %>% 
+  kable(caption = "Who do you like better? (By Study Order)") # generates table
+```
+
+```{r}
+# check for interaction (age and study order) (Q1 - liking measure)
+liking_logit_order_binary_int_model = glm(like_better ~ study_order_first * exact_age, 
+                       data = df.study_order_binary, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic
+liking_order_int_wald_test = wald.test(b = coef(liking_logit_order_binary_int_model),
+                                      Sigma = vcov(liking_logit_order_binary_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(liking_order_int_wald_test, digits = 4)
+```
+
+### Lying about Performance Measure
+
+```{r}
+# check for main effect of gender (lying about performance measure)
+lap_logit_gender_model = glm(lap ~ child_gender, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for main effect of gender
+lap_gender_wald_test = wald.test(b = coef(lap_logit_gender_model),
+                                      Sigma = vcov(lap_logit_gender_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE) 
+
+print(lap_gender_wald_test, digits = 4)
+```
+
+```{r}
+# check for interaction between age and gender (lying about performance measure)
+lap_logit_gender_int_model = glm(lap ~ child_gender*exact_age, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for interaction between age and gender
+lap_gender_int_wald_test = wald.test(b = coef(lap_logit_gender_int_model),
+                                      Sigma = vcov(lap_logit_gender_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(lap_gender_int_wald_test, digits = 4) 
+```
+
+```{r}
+# check for main effect of character order (Q2 - lap measure)
+lap_logit_char_order_model = glm(lap ~ Condition, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for main effect of character order
+lap_char_order_wald_test = wald.test(b = coef(lap_logit_char_order_model),
+                                      Sigma = vcov(lap_logit_char_order_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(lap_char_order_wald_test, digits = 4)
+```
+
+```{r}
+# check for interaction between age and character order (Q2 - lap measure)
+lap_logit_char_order_int_model = glm(lap ~ Condition*exact_age, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# check for interaction between age and character order (Q2 - lap measure)
+lap_char_order_int_wald_test = wald.test(b = coef(lap_logit_char_order_int_model),
+                                      Sigma = vcov(lap_logit_char_order_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(lap_char_order_int_wald_test, digits = 4)
+```
+
+```{r}
+# check for main effect of study order (Q2 - lying about performance measure)
+lap_logit_order_binary_model = glm(lap ~ study_order_first, 
+                       data = df.study_order_binary, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# calculate Wald chi square statistic
+lap_order_wald_test = wald.test(b = coef(lap_logit_order_binary_model),
+                                      Sigma = vcov(lap_logit_order_binary_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE) 
+
+print(lap_order_wald_test, digits = 4)
+```
+
+```{r}
+# check for interaction (age and study order) (Q2 - lying about performance measure)
+lap_logit_order_binary_int_model = glm(lap ~ study_order_first * exact_age, 
+                       data = df.study_order_binary, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# calculate Wald chi square statistic
+lap_order_int_wald_test = wald.test(b = coef(lap_logit_order_binary_int_model),
+                                      Sigma = vcov(lap_logit_order_binary_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(lap_order_int_wald_test, digits = 4)
+```
+
+### Lying about Helping Measure
+
+```{r}
+# check for main effect of gender (lying about helping measure)
+lah_logit_gender_model = glm(lah ~ child_gender, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for main effect of gender
+lah_gender_wald_test = wald.test(b = coef(lah_logit_gender_model),
+                                      Sigma = vcov(lah_logit_gender_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(lah_gender_wald_test, digits = 4)
+```
+
+```{r}
+# check for interaction between age and gender (lying about helping measure)
+lah_logit_gender_int_model = glm(lah ~ child_gender*exact_age, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for interaction between age and gender
+lah_gender_int_wald_test = wald.test(b = coef(lah_logit_gender_int_model),
+                                      Sigma = vcov(lah_logit_gender_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(lah_gender_int_wald_test, digits = 4)
+```
+
+```{r}
+# check for main effect of character order (Q3 - lah measure)
+lah_logit_char_order_model = glm(lah ~ Condition, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for main effect of character order
+lah_char_order_wald_test = wald.test(b = coef(lah_logit_char_order_model),
+                                      Sigma = vcov(lah_logit_char_order_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE) 
+
+print(lah_char_order_wald_test, digits = 4) 
+```
+
+```{r}
+# check for interaction between age and character order (Q3 - lah measure)
+lah_logit_char_order_int_model = glm(lah ~ Condition*exact_age, 
+                       data = study5_data, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic for interaction between age and character order
+lah_char_order_int_wald_test = wald.test(b = coef(lah_logit_char_order_int_model),
+                                      Sigma = vcov(lah_logit_char_order_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(lah_char_order_int_wald_test, digits = 4)
+```
+
+```{r}
+# check for main effect of study order (Q3 - lying about helping measure)
+lah_logit_order_binary_model = glm(lah ~ study_order_first, 
+                       data = df.study_order_binary, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic
+lah_order_wald_test = wald.test(b = coef(lah_logit_order_binary_model),
+                                      Sigma = vcov(lah_logit_order_binary_model), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(lah_order_wald_test, digits = 4) 
+```
+
+```{r}
+# check for interaction (age and study order) (Q3 - lying about helping measure)
+lah_logit_order_binary_int_model = glm(lah ~ study_order_first * exact_age, 
+                       data = df.study_order_binary, 
+                       family = binomial(link = "logit")) 
+```
+
+```{r}
+# generate Wald chi square statistic
+lah_order_int_wald_test = wald.test(b = coef(lah_logit_order_binary_int_model),
+                                      Sigma = vcov(lah_logit_order_binary_int_model), 
+                                      Terms = 4, 
+                                      verbose = TRUE)
+
+print(lah_order_int_wald_test, digits = 4)
+```
+
+
+## Confirmatory Analyses
+
+### Composite Score
+
+```{r}
+# generates ordinal logistic regression model that examines the effect of age
+# on children's composite scores
+composite_model_aug_age_ex = polr(composite_score ~ exact_age,
+                           data = study5_data)
+
+# generates compact model
+composite_model_age_ex_compact = polr(composite_score ~ 1,
+                           data = study5_data)
+```
+
+```{r}
+# generates Wald chi-square statistic
+composite_wald_test_age_ex = waldtest(composite_model_age_ex_compact,
+                                    composite_model_aug_age_ex)
+
+print(composite_wald_test_age_ex)
+```
+
+### Liking Measure
+
+```{r}
+# generates logistic regression model to examine the effect of age on children's
+# social preference for the reputationally or intrinsically motivated character
+liking_model_aug_age_ex = glm(like_better ~ exact_age, 
+                                  data = study5_data, 
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for effect of age 
+liking_wald_test_age_ex = wald.test(b = coef(liking_model_aug_age_ex),
+                                      Sigma = vcov(liking_model_aug_age_ex), 
+                                      Terms = 2, 
+                                      verbose = TRUE) 
+
+print(liking_wald_test_age_ex, digits = 4) 
+```
+
+```{r}
+# Q1 - liking measure (reference: intrinsic character)
+# generates binomial tests for each age group that test whether children chose the intrinsic character more often than would be predicted by chance
+study5_liking_binomial_tests = study5_summary_liking %>% 
+  group_by(age_group) %>% 
+  do(test = tidy(binom.test(sum(.$number_intrinsic), 
+                       sum(.$total_n), 
+                       p = .5,
+                       conf.level = 0.95))) 
+
+# generates dataframe with results of binomial tests described above
+study5_liking_binomial_test_summary = 
+  study5_liking_binomial_tests$test %>%
+    bind_rows %>% 
+    bind_cols(study5_liking_binomial_tests[1], .) 
+
+# generates table of binomial test estimates
+study5_liking_binomial_test_summary %>% 
+  kable(caption = "Binomial Tests - Who do you like better?") %>% 
+  kable_styling(bootstrap_options = "striped",
+                full_width = F,
+                latex_options = c("hold_position", "scale_down"))
+```
+
+### Lying about Performance Measure
+
+```{r}
+# generates logistic regression model to examine the effect of age on children's
+# choice of the reputationally or intrinsically motivated character as the one
+# who lied about performing poorly at a game
+lap_model_aug_age_ex = glm(lap ~ exact_age, 
+                                  data = study5_data, 
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for effect of age
+lap_wald_test_age_ex = wald.test(b = coef(lap_model_aug_age_ex),
+                                      Sigma = vcov(lap_model_aug_age_ex), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(lap_wald_test_age_ex, digits = 4)
+```
+
+```{r}
+# Q2 - lying about performance measure (reference: reputational character)
+# generates binomial tests for each age group that test whether children chose the reputational character more often than would be predicted by chance
+study5_lap_binomial_tests = study5_summary_lap %>% 
+  group_by(age_group) %>% 
+  do(test = tidy(binom.test(sum(.$number_reputational), 
+                       sum(.$total_n), 
+                       p = .5,
+                       conf.level = 0.95))) 
+
+# generates dataframe with results of binomial tests described above
+study5_lap_binomial_test_summary = 
+  study5_lap_binomial_tests$test %>%
+    bind_rows %>% 
+    bind_cols(study5_lap_binomial_tests[1], .) 
+
+# generates table of binomial test estimates
+study5_lap_binomial_test_summary %>% 
+  kable(caption = "Binomial Tests - Who do you think lied about performing poorly?") %>%
+  kable_styling(bootstrap_options = "striped",
+                full_width = F,
+                latex_options = c("hold_position", "scale_down"))
+```
+
+### Lying about Helping Measure
+
+```{r}
+# generates logistic regression model to examine the effect of age on children's
+# choice of the reputationally or intrinsically motivated character as the one
+# who lied about having helped at the playground
+lah_model_aug_age_ex = glm(lah ~ exact_age, 
+                                  data = study5_data, 
+                                  family = binomial(link = "logit"))
+```
+
+```{r}
+# generates Wald chi square statistic for effect of age
+lah_wald_test_age_ex = wald.test(b = coef(lah_model_aug_age_ex),
+                                      Sigma = vcov(lah_model_aug_age_ex), 
+                                      Terms = 2, 
+                                      verbose = TRUE)
+
+print(lah_wald_test_age_ex, digits = 4)
+```
+
+```{r}
+# Q3 - lying about helping measure (reference: reputational character)
+# generates binomial tests for each age group that test whether children chose the reputational character more often than would be predicted by chance
+study5_lah_binomial_tests = study5_summary_lah %>% 
+  group_by(age_group) %>% 
+  do(test = tidy(binom.test(sum(.$number_reputational), 
+                       sum(.$total_n), 
+                       p = .5,
+                       conf.level = 0.95))) 
+
+# generates dataframe with results of binomial tests described above
+study5_lah_binomial_test_summary = 
+  study5_lah_binomial_tests$test %>%
+    bind_rows %>% 
+    bind_cols(study5_lah_binomial_tests[1], .)
+
+# generates table of binomial test estimates
+study5_lah_binomial_test_summary %>% 
+  kable(caption = "Binomial Tests - Who do you think lied about having helped?") %>%
   kable_styling(bootstrap_options = "striped",
                 full_width = F,
                 latex_options = c("hold_position", "scale_down"))
@@ -960,5 +2169,158 @@ df.pvp_logit_plot %>%
        color = element_blank()) +
   theme_bw()
 ```
+
+```{r}
+# Study 5 plot
+# generate model predictions for each separate measure and combine into dataframe
+df.liking_recoded = study5_data %>% 
+  mutate(like_better = relevel(like_better,
+                               ref = "Intrinsic"))
+
+liking_model_aug_age_ex_rep = glm(like_better ~ exact_age, 
+                                  data = df.liking_recoded, 
+                                  family = binomial(link = "logit"))
+
+df.liking_logit_model = ggpredict(model = liking_model_aug_age_ex_rep,
+                               terms = "exact_age [all]") %>% 
+  rename_all(function(x) paste0("liking_", x)) %>% 
+  mutate(id = 1:n()) %>% 
+  select(-liking_group)
+
+df.lap_logit_model = ggpredict(model = lap_model_aug_age_ex,
+                               terms = "exact_age [all]") %>% 
+  rename_all(function(x) paste0("lap_", x)) %>% 
+  mutate(id = 1:n()) %>% 
+  select(-lap_group)
+
+df.lah_logit_model = ggpredict(model = lah_model_aug_age_ex,
+                               terms = "exact_age [all]") %>% 
+  rename_all(function(x) paste0("lah_", x)) %>% 
+  mutate(id = 1:n()) %>% 
+  select(-lah_group)
+
+df.combined_model = df.liking_logit_model %>% 
+  left_join(df.lap_logit_model, by = "id") %>% 
+  left_join(df.lah_logit_model, by = "id") %>% 
+  pivot_longer(cols = -id,
+               names_to = c("study", "value_type"),
+               names_sep = "_",
+               values_to = "value") %>% 
+  pivot_wider(names_from = "value_type",
+              values_from = "value") %>% 
+  mutate(study = ifelse(study == "liking", 
+                        "Who do you like better?",
+                        ifelse(study == "lap",
+                               "Who lied about perfoming poorly?",
+                               "Who lied about having helped?"))) %>% 
+  mutate(study = factor(study, levels = c("Who do you like better?", 
+                                          "Who lied about perfoming poorly?", 
+                                          "Who lied about having helped?")))
+```
+
+```{r}
+# get individual data
+df.liking_data = study5_data %>% 
+  select(c(new_ID,
+         like_better,
+         exact_age)) %>% 
+  rename(measure = like_better) %>% 
+  rename_all(function(x) paste0("liking_", x)) %>% 
+  rename(id = liking_new_ID) %>% 
+  mutate(liking_measure = ifelse(liking_measure == "Intrinsic", 0, 1))
+
+df.lap_data = study5_data %>% 
+  select(c(new_ID,
+         lap,
+         exact_age)) %>% 
+  rename(measure = lap) %>% 
+  rename_all(function(x) paste0("lap_", x)) %>% 
+  rename(id = lap_new_ID) %>% 
+  mutate(lap_measure = ifelse(lap_measure == "Intrinsic", 0, 1))
+
+df.lah_data = study5_data %>% 
+  select(c(new_ID,
+         lah,
+         exact_age)) %>% 
+  rename(measure = lah) %>% 
+  rename_all(function(x) paste0("lah_", x)) %>% 
+  rename(id = lah_new_ID) %>% 
+  mutate(lah_measure = ifelse(lah_measure == "Intrinsic", 0, 1))
+
+df.combined_individual_data = df.liking_data %>% 
+  left_join(df.lap_data, by = "id") %>% 
+  left_join(df.lah_data, by = "id") %>% 
+  pivot_longer(cols = -id,
+               names_to = c("study", "value_type"),
+               names_sep = "_",
+               values_to = "value") %>% 
+  pivot_wider(names_from = "value_type",
+              values_from = "value") %>% 
+  mutate(study = ifelse(study == "liking", 
+                        "Who do you like better?",
+                        ifelse(study == "lap",
+                               "Who lied about perfoming poorly?",
+                               "Who lied about having helped?"))) %>% 
+  mutate(study = factor(study, levels = c("Who do you like better?", 
+                                          "Who lied about perfoming poorly?", 
+                                          "Who lied about having helped?")))
+```
+
+```{r}
+text_reputational = textGrob("Chose Student with\n Reputational Concerns", 
+                              gp=gpar(fontsize=9, 
+                                      fontface="bold"))
+text_intrinsic = textGrob("Chose Student with\nIntrinsic Concerns", 
+                           gp=gpar(fontsize=9, 
+                                   fontface="bold"))
+```
+
+```{r}
+set.seed(0)
+df.combined_model %>% 
+  ggplot(mapping = aes(x = x,
+                       y = predicted,
+                       group = study,
+                       color = study,
+                       fill = study)) +
+  geom_ribbon(data = df.combined_model,
+              mapping = aes(ymin = conf.low,
+                            ymax = conf.high),
+              linetype = 0,
+              alpha = 0.3) + 
+  geom_line(na.rm = TRUE) + 
+  geom_point(data = df.combined_individual_data,
+             mapping = aes(x = exact,
+                           y = measure,
+                           color = study),
+             position = position_jitter(w = 0,
+                                        h = 0.025),
+             alpha = 0.5) + 
+  scale_x_continuous(breaks = seq(4, 10, by = 1),
+                     expand = c(.01, .01)) + 
+  coord_cartesian(xlim = c(4, 10),
+                  ylim = c(-0.03, 1.03),
+                  clip = "off") + 
+    annotation_custom(text_reputational,
+                    xmin=10.82,
+                    xmax=10.82,
+                    ymin=1,
+                    ymax=1) + 
+  annotation_custom(text_intrinsic,
+                    xmin=10.74,
+                    xmax=10.74,
+                    ymin=0,
+                    ymax=0) + 
+  scale_y_continuous(breaks = seq(0, 1.00, by = .25),
+                     expand = c(.01, .01)) + 
+  # scale_color_brewer(palette = "Set1") +
+  # scale_fill_brewer(palette = "Set1") +
+  labs(x = "Age (Continous)",
+       y = "Predicted Probability of Choosing Student \n with Reputational Motives",
+       fill = element_blank(),
+       color = element_blank()) +
+  theme_bw()
+```
+
 
 # References

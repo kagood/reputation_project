@@ -1,27 +1,27 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.9)  3 APR 2020 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.14)  28 MAR 2021 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **reputation_analyses.tex
 (./reputation_analyses.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-02-25> (/Users/kaylagood/Library/TinyTeX/texmf-dist/
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (/Users/kaylagood/Library/TinyTeX/texmf-dist/
 tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -67,7 +67,7 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 For additional information on amsmath, use the `?' option.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -75,80 +75,68 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
-\ex@=\dimen135
+\ex@=\dimen139
 )) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen136
+\pmbraise@=\dimen140
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count175
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count176
-\leftroot@=\count177
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count178
-\DOTSCASE@=\count179
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen137
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count180
-\c@MaxMatrixCols=\count181
+\inf@bad=\count187
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count188
+\leftroot@=\count189
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count190
+\DOTSCASE@=\count191
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count192
+\c@MaxMatrixCols=\count193
 \dotsspace@=\muskip16
-\c@parentequation=\count182
-\dspbrk@lvl=\count183
+\c@parentequation=\count194
+\dspbrk@lvl=\count195
 \tag@help=\toks17
-\row@=\count184
-\column@=\count185
-\maxfields@=\count186
+\row@=\count196
+\column@=\count197
+\maxfields@=\count198
 \andhelp@=\toks18
-\eqnshift@=\dimen138
-\alignsep@=\dimen139
-\tagshift@=\dimen140
-\tagwidth@=\dimen141
-\totwidth@=\dimen142
-\lineht@=\dimen143
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
 \@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 )) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2018/08/11 v1.3c Input encoding file
+Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -156,7 +144,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
@@ -174,13 +162,13 @@ File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2016/05/11 v2.12 Predefined colors according to Unix/X11 (UK)
 )) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.st
-y
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.
+sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.st
@@ -215,43 +203,47 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.st
 y
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen144
-\Hy@linkcounter=\count187
-\Hy@pagecounter=\count188
+\@linkdim=\dimen148
+\Hy@linkcounter=\count199
+\Hy@pagecounter=\count266
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
+)
+(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-langpa
+tches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel la
+nguages
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.st
 y
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count189
-\pdfmajorversion=\count190
-Package hyperref Info: Option `unicode' set `true' on input line 4421.
+\Hy@SavedSpaceFactor=\count267
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Option `unicode' set `true' on input line 4073.
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count191
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count268
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen145
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen149
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -260,34 +252,37 @@ sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count192
-\Field@Width=\dimen146
-\Fld@charsize=\dimen147
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
-(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+\Fld@menulength=\count269
+\Field@Width=\dimen150
+\Fld@charsize=\dimen151
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
+(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
 )
-\Hy@abspage=\count193
-\c@Item=\count194
-\c@Hfootnote=\count195
+\Hy@abspage=\count270
+\c@Item=\count271
+\c@Hfootnote=\count272
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
-(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
+with kernel methods
 )
-\Fld@listcount=\count196
-\c@bookmark@seq@number=\count197
+\Fld@listcount=\count273
+\c@bookmark@seq@number=\count274
 
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfile
 check.sty
@@ -302,80 +297,86 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip52
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
-Package hyperref Info: Option `breaklinks' set `true' on input line 41.
+Package hyperref Info: Option `colorlinks' set `true' on input line 46.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count198
-\Gm@cntv=\count199
-\c@Gm@tempcnt=\count266
-\Gm@bindingoffset=\dimen148
-\Gm@wd@mp=\dimen149
-\Gm@odd@mp=\dimen150
-\Gm@even@mp=\dimen151
-\Gm@layoutwidth=\dimen152
-\Gm@layoutheight=\dimen153
-\Gm@layouthoffset=\dimen154
-\Gm@layoutvoffset=\dimen155
+\Gm@cnth=\count275
+\Gm@cntv=\count276
+\c@Gm@tempcnt=\count277
+\Gm@bindingoffset=\dimen152
+\Gm@wd@mp=\dimen153
+\Gm@odd@mp=\dimen154
+\Gm@even@mp=\dimen155
+\Gm@layoutwidth=\dimen156
+\Gm@layoutheight=\dimen157
+\Gm@layouthoffset=\dimen158
+\Gm@layoutvoffset=\dimen159
 \Gm@dimlist=\toks24
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count267
+Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count278
 \FV@InFile=\read2
-\FV@TabBox=\box47
-\c@FancyVerbLine=\count268
-\FV@StepNumber=\count269
+\FV@TabBox=\box49
+\c@FancyVerbLine=\count279
+\FV@StepNumber=\count280
 \FV@OutFile=\write3
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip53
-\fb@frw=\dimen156
-\fb@frh=\dimen157
-\FrameRule=\dimen158
-\FrameSep=\dimen159
+\fb@frw=\dimen160
+\fb@frh=\dimen161
+\FrameRule=\dimen162
+\FrameSep=\dimen163
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip54
 \LTright=\skip55
 \LTpre=\skip56
 \LTpost=\skip57
-\LTchunksize=\count270
-\LTcapwidth=\dimen160
-\LT@head=\box48
-\LT@firsthead=\box49
-\LT@foot=\box50
-\LT@lastfoot=\box51
-\LT@cols=\count271
-\LT@rows=\count272
-\c@LT@tables=\count273
-\c@LT@chunks=\count274
+\LTchunksize=\count281
+\LTcapwidth=\dimen164
+\LT@head=\box50
+\LT@firsthead=\box51
+\LT@foot=\box52
+\LT@lastfoot=\box53
+\LT@cols=\count282
+\LT@rows=\count283
+\c@LT@tables=\count284
+\c@LT@chunks=\count285
 \LT@p@ftn=\toks25
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen161
-\lightrulewidth=\dimen162
-\cmidrulewidth=\dimen163
-\belowrulesep=\dimen164
-\belowbottomsep=\dimen165
-\aboverulesep=\dimen166
-\abovetopsep=\dimen167
-\cmidrulesep=\dimen168
-\cmidrulekern=\dimen169
-\defaultaddspace=\dimen170
-\@cmidla=\count275
-\@cmidlb=\count276
-\@aboverulesep=\dimen171
-\@belowrulesep=\dimen172
-\@thisruleclass=\count277
-\@lastruleclass=\count278
-\@thisrulewidth=\dimen173
+\heavyrulewidth=\dimen165
+\lightrulewidth=\dimen166
+\cmidrulewidth=\dimen167
+\belowrulesep=\dimen168
+\belowbottomsep=\dimen169
+\aboverulesep=\dimen170
+\abovetopsep=\dimen171
+\cmidrulesep=\dimen172
+\cmidrulekern=\dimen173
+\defaultaddspace=\dimen174
+\@cmidla=\count286
+\@cmidlb=\count287
+\@aboverulesep=\dimen175
+\@belowrulesep=\dimen176
+\@thisruleclass=\count288
+\@lastruleclass=\count289
+\@thisrulewidth=\dimen177
+) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count290
+) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box54
+\fn@width=\dimen178
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
@@ -385,8 +386,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen174
-\Gin@req@width=\dimen175
+\Gin@req@height=\dimen179
+\Gin@req@width=\dimen180
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
@@ -394,31 +395,31 @@ Package grffile Info: This package is an empty stub for compatibility on input
 line 40.
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count279
+\c@float@type=\count291
 \float@exts=\toks26
-\float@box=\box52
+\float@box=\box55
 \@float@everytoks=\toks27
-\@floatcapt=\box53
+\@floatcapt=\box56
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen176
-\ar@mcellbox=\box54
-\extrarowheight=\dimen177
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen181
+\ar@mcellbox=\box57
+\extrarowheight=\dimen182
 \NC@list=\toks28
 \extratabsurround=\skip58
 \backup@length=\skip59
-\ar@cellbox=\box55
+\ar@cellbox=\box58
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+Package: multirow 2021/01/29 v2.7 Span multiple rows of a table
 \multirow@colwidth=\skip60
-\multirow@cntb=\count280
+\multirow@cntb=\count292
 \multirow@dima=\skip61
-\bigstrutjot=\dimen178
+\bigstrutjot=\dimen183
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen179
-\WF@size=\dimen180
-\c@WF@wrappedlines=\count281
-\WF@box=\box56
+\wrapoverhang=\dimen184
+\WF@size=\dimen185
+\c@WF@wrappedlines=\count293
+\WF@box=\box59
 \WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
@@ -429,45 +430,45 @@ Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 y
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box57
-\sift@deathcycles=\count282
-\@vwid@loff=\dimen181
-\@vwid@roff=\dimen182
+\@vwid@box=\box60
+\sift@deathcycles=\count294
+\@vwid@loff=\dimen186
+\@vwid@roff=\dimen187
 )
-\c@taburow=\count283
-\tabu@nbcols=\count284
-\tabu@cnt=\count285
-\tabu@Xcol=\count286
-\tabu@alloc=\count287
-\tabu@nested=\count288
-\tabu@target=\dimen183
-\tabu@spreadtarget=\dimen184
-\tabu@naturalX=\dimen185
-\tabucolX=\dimen186
-\tabu@Xsum=\dimen187
-\extrarowdepth=\dimen188
-\abovetabulinesep=\dimen189
-\belowtabulinesep=\dimen190
-\tabustrutrule=\dimen191
+\c@taburow=\count295
+\tabu@nbcols=\count296
+\tabu@cnt=\count297
+\tabu@Xcol=\count298
+\tabu@alloc=\count299
+\tabu@nested=\count300
+\tabu@target=\dimen188
+\tabu@spreadtarget=\dimen189
+\tabu@naturalX=\dimen190
+\tabucolX=\dimen191
+\tabu@Xsum=\dimen192
+\extrarowdepth=\dimen193
+\abovetabulinesep=\dimen194
+\belowtabulinesep=\dimen195
+\tabustrutrule=\dimen196
 \tabu@thebody=\toks31
 \tabu@footnotes=\toks32
-\tabu@box=\box58
-\tabu@arstrutbox=\box59
-\tabu@hleads=\box60
-\tabu@vleads=\box61
+\tabu@box=\box61
+\tabu@arstrutbox=\box62
+\tabu@hleads=\box63
+\tabu@vleads=\box64
 \tabu@cellskip=\skip63
 )
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/threeparttable/threepart
 table.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box62
+\@tempboxb=\box65
 )
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threepar
 ttablex.sty
@@ -481,27 +482,27 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \TPTL@width=\skip64
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box63
-\UL@hyphenbox=\box64
+\UL@box=\box66
+\UL@hyphenbox=\box67
 \UL@skip=\skip65
 \UL@hook=\toks33
-\UL@height=\dimen192
-\UL@pe=\count289
-\UL@pixel=\dimen193
-\ULC@box=\box65
+\UL@height=\dimen197
+\UL@pe=\count301
+\UL@pixel=\dimen198
+\ULC@box=\box68
 Package: ulem 2019/11/18
-\ULdepth=\dimen194
+\ULdepth=\dimen199
 ) (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen195
-\c@nlinenum=\count290
+\rotheadsize=\dimen256
+\c@nlinenum=\count302
 \TeXr@lab=\toks34
 )
-(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdfm
-ode.def
-File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count291
-\l__pdf_internal_box=\box66
+(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdft
+ex.def
+File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count303
+\l__pdf_internal_box=\box69
 ) (./reputation_analyses.aux)
 \openout1 = `reputation_analyses.aux'.
 
@@ -535,10 +536,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box67
 Package hyperref Info: Link coloring ON on input line 136.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -546,7 +546,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 estring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count292
+\c@section@level=\count304
 )
 LaTeX Info: Redefining \ref on input line 136.
 LaTeX Info: Redefining \pageref on input line 136.
@@ -635,10 +635,6 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write5
 \openout5 = `reputation_analyses.toc'.
 
-[1
-
-{/Users/kaylagood/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 48.
 (/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -646,201 +642,173 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 150.
+[1
 
-Overfull \hbox (20.78616pt too wide) in paragraph at lines 202--213
+{/Users/kaylagood/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+]
+Overfull \hbox (20.78616pt too wide) in paragraph at lines 210--221
  [][] 
  []
 
 [2pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.218 \begin{Shaded}
-                    ] [3pdfTeX warning (ext4): destination with the same identi
-fier (name{table.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.299 \begin{Shaded}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.235 \end{Shaded}
+                  ] [3pdfTeX warning (ext4): destination with the same identifi
+er (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.321 \begin{Shaded}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{table.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.299 \begin{Shaded}
-                    ]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-337.
-(/Users/kaylagood/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4] [5pdfTeX warning (ext4): destination with the same identifier (name{table
-.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.444 \end{Shaded}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.321 \begin{Shaded}
+                    ] [4] [5pdfTeX warning (ext4): destination with the same id
+entifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.466 \end{Shaded}
                   ]
-Overfull \hbox (20.78616pt too wide) in paragraph at lines 474--485
+Overfull \hbox (20.78616pt too wide) in paragraph at lines 504--515
  [][] 
  []
 
 [6pdfTeX warning (ext4): destination with the same identifier (name{table.5}) h
 as been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.507 \end{Shaded}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.530 \end{Shaded}
                   ] [7pdfTeX warning (ext4): destination with the same identifi
 er (name{table.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.583 \end{Shaded}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.629 \end{Shaded}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{table.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.583 \end{Shaded}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.629 \end{Shaded}
                   ] [8] [9pdfTeX warning (ext4): destination with the same iden
 tifier (name{table.8}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.720 \end{Shaded}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.766 \end{Shaded}
                   ]
-Overfull \hbox (20.78616pt too wide) in paragraph at lines 750--761
+Overfull \hbox (20.78616pt too wide) in paragraph at lines 804--815
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [10pdfTeX warning (ext4): destination with the same identifier (name{table.9}) 
 has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.808 \begin{Shaded}
-                    ] [11pdfTeX warning (ext4): destination with the same ident
-ifier (name{table.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.885 \end{verbatim}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.830 \end{Shaded}
+                  ] [11pdfTeX warning (ext4): destination with the same identif
+ier (name{table.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.917 \begin{Shaded}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{table.11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.885 \end{verbatim}
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.917 \begin{Shaded}
                     ] [12] [13pdfTeX warning (ext4): destination with the same 
 identifier (name{table.12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1000 \begin{Shaded}
-                     ] [14pdfTeX warning (ext4): destination with the same iden
-tifier (name{table.13}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1080 \end{Shaded}
-                   ] [15pdfTeX warning (ext4): destination with the same identi
-fier (name{table.14}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1165 \begin{Shaded}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{table.15}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1165 \begin{Shaded}
-                     ] [16] [17] [18] [19]
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1068 \end{Shaded}
+                   ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20] [21pdfTeX warning (ext4): destination with the same identifier (name{table
-.16}) has been already used, duplicate ignored
+[14]
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 1155--1155
+[]\T1/lmtt/m/n/10 ## `summarise()` regrouping output by 'Condition', 'AgeGroup'
+ (override with `.groups` argument)[] 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1569 \end{verbatim}
-                     ] [22pdfTeX warning (ext4): destination with the same iden
-tifier (name{table.17}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1618 \begin{Shaded}
-                     ] [23] [24]
-<reputation_analyses_files/figure-latex/unnamed-chunk-48-1.pdf, id=258, 457.71p
+[15pdfTeX warning (ext4): destination with the same identifier (name{table.13})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1213 \end{Shaded}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{table.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1213 \end{Shaded}
+                   ] [16pdfTeX warning (ext4): destination with the same identi
+fier (name{table.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1316 \end{verbatim}
+                     ] [17] [18] [19] [20] [21pdfTeX warning (ext4): destinatio
+n with the same identifier (name{table.16}) has been already used, duplicate ig
+nored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1625 \end{verbatim}
+                     ] [22] [23pdfTeX warning (ext4): destination with the same
+ identifier (name{table.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.1742 \end{Shaded}
+                   ] [24]
+<reputation_analyses_files/figure-latex/unnamed-chunk-48-1.pdf, id=255, 457.71p
 t x 320.19624pt>
 File: reputation_analyses_files/figure-latex/unnamed-chunk-48-1.pdf Graphic fil
 e (type pdf)
 <use reputation_analyses_files/figure-latex/unnamed-chunk-48-1.pdf>
 Package pdftex.def Info: reputation_analyses_files/figure-latex/unnamed-chunk-4
-8-1.pdf  used on input line 1747.
+8-1.pdf  used on input line 1841.
 (pdftex.def)             Requested size: 457.71587pt x 320.20033pt.
-
-Overfull \vbox (1.27151pt too high) detected at line 1768
- []
-
-[25 <./reputation_analyses_files/figure-latex/unnamed-chunk-48-1.pdf>]
-<reputation_analyses_files/figure-latex/unnamed-chunk-51-1.pdf, id=276, 458.713
+[25] [26 <./reputation_analyses_files/figure-latex/unnamed-chunk-48-1.pdf>]
+<reputation_analyses_files/figure-latex/unnamed-chunk-51-1.pdf, id=277, 458.713
 75pt x 319.1925pt>
 File: reputation_analyses_files/figure-latex/unnamed-chunk-51-1.pdf Graphic fil
 e (type pdf)
 <use reputation_analyses_files/figure-latex/unnamed-chunk-51-1.pdf>
 Package pdftex.def Info: reputation_analyses_files/figure-latex/unnamed-chunk-5
-1-1.pdf  used on input line 1827.
+1-1.pdf  used on input line 1921.
 (pdftex.def)             Requested size: 458.71263pt x 319.19171pt.
-[26] [27 <./reputation_analyses_files/figure-latex/unnamed-chunk-51-1.pdf>]
-<reputation_analyses_files/figure-latex/unnamed-chunk-53-1.pdf, id=296, 457.71p
+[27] [28 <./reputation_analyses_files/figure-latex/unnamed-chunk-51-1.pdf>]
+<reputation_analyses_files/figure-latex/unnamed-chunk-53-1.pdf, id=297, 457.71p
 t x 319.1925pt>
 File: reputation_analyses_files/figure-latex/unnamed-chunk-53-1.pdf Graphic fil
 e (type pdf)
 <use reputation_analyses_files/figure-latex/unnamed-chunk-53-1.pdf>
 Package pdftex.def Info: reputation_analyses_files/figure-latex/unnamed-chunk-5
-3-1.pdf  used on input line 1904.
+3-1.pdf  used on input line 1998.
 (pdftex.def)             Requested size: 457.7089pt x 319.19171pt.
-[28] [29 <./reputation_analyses_files/figure-latex/unnamed-chunk-53-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1992.
-[30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1992.
-(./reputation_analyses.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1992.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1992.
-
+[29] [30 <./reputation_analyses_files/figure-latex/unnamed-chunk-53-1.pdf>] [31
+] (./reputation_analyses.aux)
 Package rerunfilecheck Info: File `reputation_analyses.out' has not changed.
 (rerunfilecheck)             Checksum: 00446B8EF9F485E12D061E737EDE4E28;3839.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1992.
  ) 
 Here is how much of TeX's memory you used:
- 12719 strings out of 482938
- 183917 string characters out of 5959340
- 456801 words of memory out of 5000000
- 27588 multiletter control sequences out of 15000+600000
- 583560 words of font info for 69 fonts, out of 8000000 for 9000
+ 12552 strings out of 480970
+ 183328 string characters out of 5906766
+ 527808 words of memory out of 5000000
+ 29379 multiletter control sequences out of 15000+600000
+ 454040 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,10n,37p,391b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/kaylagood/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/U
-sers/kaylagood/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users
-/kaylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/
-kaylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/k
-aylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/kay
-lagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/kayla
-good/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/kaylago
-od/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/kaylagoo
-d/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/kaylagood
-/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/kaylagood/
-Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on reputation_analyses.pdf (30 pages, 349433 bytes).
+ 71i,10n,74p,391b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/kaylagood/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</U
+sers/kaylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Us
+ers/kaylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Use
+rs/kaylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users
+/kaylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/k
+aylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/ka
+ylagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></Users/kay
+lagood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/kayl
+agood/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on reputation_analyses.pdf (31 pages, 329716 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 397 compressed objects within 4 object streams
- 119 named destinations out of 1000 (max. 500000)
+ 447 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 120 named destinations out of 1000 (max. 500000)
  184 words of extra memory for PDF output out of 10000 (max. 10000000)
 
