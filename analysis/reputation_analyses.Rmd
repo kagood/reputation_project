@@ -1257,14 +1257,18 @@ print(out)
 df.lap_logit_model = ggpredict(model = lap_logit_model,
                                terms = "Age_Ex [all]") %>% 
   rename_all(function(x) paste0("lap_", x)) %>% 
+  as.data.frame() %>% 
   mutate(id = 1:n()) %>% 
-  select(-lap_group)
+  as.data.frame() %>% 
+  dplyr::select(-c(lap_group))
 
 df.las_logit_model = ggpredict(model = las_logit_model,
                                terms = "Age_Ex [all]") %>% 
+  as.data.frame() %>% 
   rename_all(function(x) paste0("las_", x)) %>% 
   mutate(id = 1:n()) %>% 
-  select(-las_group)
+  as.data.frame() %>% 
+  dplyr::select(-las_group)
 
 df.combined_model = df.lap_logit_model %>% 
   left_join(df.las_logit_model, by = "id") %>% 
@@ -1372,6 +1376,10 @@ df.combined_model %>%
        color = element_blank()) +
   theme_bw()
 ```
+```{r}
+ggsave("figure1_studies1and2.png", plot = last_plot(), width = 9.75)
+```
+
 ## Figure 2 (Study 4)
 
 ```{r}
@@ -1381,6 +1389,7 @@ df.pvp_logit_model = ggpredict(model = pvp_logit_model,
 
 # creating data frame for plot
 df.pvp_logit_plot = df.pvp_logit_model %>% 
+  as.data.frame() %>% 
   rename(condition = group) %>% 
   mutate(condition = ifelse(condition == "0", 
                             "Private Condition", 
@@ -1424,13 +1433,13 @@ df.pvp_logit_plot %>%
                   ylim = c(0, 1),
                   clip = "off") + 
   annotation_custom(text_reputational,
-                    xmin=11,
-                    xmax=11,
+                    xmin=10.75,
+                    xmax=10.75,
                     ymin=1,
                     ymax=1) + 
   annotation_custom(text_intrinsic,
-                    xmin=11,
-                    xmax=11,
+                    xmin=10.75,
+                    xmax=10.75,
                     ymin=0,
                     ymax=0) + 
   scale_y_continuous(breaks = seq(0, 1.00, by = .25),
@@ -1444,6 +1453,10 @@ df.pvp_logit_plot %>%
        color = element_blank()) +
   theme_bw()
 ```
+```{r}
+ggsave("figure2_study4.png", plot = last_plot(), width = 9.75)
+```
+
 ## Figure 3 (Study 5)
 
 ```{r}
@@ -1459,18 +1472,21 @@ liking_model_aug_age_ex_rep = glm(like_better ~ exact_age,
 
 df.liking_logit_model = ggpredict(model = liking_model_aug_age_ex_rep,
                                terms = "exact_age [all]") %>% 
+  as.data.frame() %>% 
   rename_all(function(x) paste0("liking_", x)) %>% 
   mutate(id = 1:n()) %>% 
   select(-liking_group)
 
 df.lap_logit_model = ggpredict(model = lap_model_aug_age_ex,
                                terms = "exact_age [all]") %>% 
+  as.data.frame() %>% 
   rename_all(function(x) paste0("lap_", x)) %>% 
   mutate(id = 1:n()) %>% 
   select(-lap_group)
 
 df.lah_logit_model = ggpredict(model = lah_model_aug_age_ex,
                                terms = "exact_age [all]") %>% 
+  as.data.frame() %>% 
   rename_all(function(x) paste0("lah_", x)) %>% 
   mutate(id = 1:n()) %>% 
   select(-lah_group)
@@ -1596,6 +1612,9 @@ df.combined_model %>%
        fill = element_blank(),
        color = element_blank()) +
   theme_bw()
+```
+```{r}
+ggsave("figure3_study5.png", plot = last_plot(), width = 9.75)
 ```
 
 # Supplementary Analyses & Figures
